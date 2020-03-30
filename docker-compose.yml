@@ -1,0 +1,7 @@
+version: "3"
+services:
+  rest:
+    build: .
+    image: tensorflow-picture-tensor-converter
+    ports:
+      - "5000:5000"
