@@ -19,11 +19,11 @@ def convert_picture():
     width = int(request.args.get('height'))
     height = int(request.args.get('width'))
 
-    with tempfile.NamedTemporaryFile() as temp:
-        temp.write(picture_binary)
-        temp.seek(0)
-        temp.flush()
-        tensor = read_image_as_tensor(temp.name, height, width)
+    with tempfile.NamedTemporaryFile() as temporary_file:
+        temporary_file.write(picture_binary)
+        temporary_file.seek(0)
+        temporary_file.flush()
+        tensor = read_image_as_tensor(temporary_file.name, height, width)
 
     return { "tensor": tensor }
     
