@@ -11,7 +11,7 @@ Unfortunately, installing the Python `tensorflow` package wastes over 500 MB and
 ## POST JPEG
 
 ```
-curl -X POST -H "Content-Type: image/jpeg" --data-binary @1.jpg "http://localhost:5000/pictures/?height=224&width=224"
+curl -X POST -H "Content-Type: image/jpeg" --data-binary @1.jpg "http://localhost:5000/v1/pictures/?height=224&width=224"
 
 {
   "tensor": [

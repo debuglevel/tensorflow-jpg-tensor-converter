@@ -13,7 +13,7 @@ def read_image_as_tensor(filename, height, width):
   img_list = img_float.tolist()
   return img_list
  
-@app.route('/pictures/', methods = ['POST'])
+@app.route('/v1/pictures/', methods = ['POST'])
 def convert_picture():
     picture_binary = request.data
     width = int(request.args.get('height'))
