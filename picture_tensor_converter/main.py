@@ -6,7 +6,6 @@ from keras.preprocessing import image
 app = Flask(__name__, static_url_path = "")
 
 def read_image_as_tensor(filename, height, width):
-  # CAVEAT: height and width might be swapped; did not verify.
   img = image.load_img(filename, target_size=(height, width))
   img_array = image.img_to_array(img) / 255.
   img_float = img_array.astype('float16')
